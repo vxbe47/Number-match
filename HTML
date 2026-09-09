@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Pairs Game</title>
+    <link rel="stylesheet" href="cjap4.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Memory Match</h1>
+            <p class="subtitle">Find all the matching pairs!</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Clicks:</span>
+                <span id="click-count" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Time:</span>
+                <span id="timer" class="stat-value">0s</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Pairs:</span>
+                <span id="pair-count" class="stat-value">0</span>
+                <span class="stat-separator">/</span>
+                <span id="total-pairs" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <div id="setup-panel" class="setup-panel">
+            <h2>Choose Board Size</h2>
+            <div class="grid-options">
+                <label class="grid-option">
+                    <input type="radio" name="gridSize" value="2x2">
+                    <span class="grid-option-label">2x2</span>
+                </label>
+                <label class="grid-option">
+                    <input type="radio" name="gridSize" value="4x4">
+                    <span class="grid-option-label">4x4</span>
+                </label>
+                <label class="grid-option">
+                    <input type="radio" name="gridSize" value="6x4">
+                    <span class="grid-option-label">6x4</span>
+                </label>
+            </div>
+        </div>
+
+        <div id="action-buttons" class="action-buttons" style="display: none;">
+            <button id="shuffle-btn" class="btn btn-outline">Shuffle</button>
+            <button id="start-btn" class="btn btn-primary">Start</button>
+        </div>
+
+        <div id="game-board" class="game-board"></div>
+
+        <button id="reset-btn" class="btn btn-outline reset-btn" style="display: none;">New Game</button>
+
+        <div id="alert-overlay" class="overlay" style="display: none;">
+            <div class="alert-box">
+                <div class="alert-icon">&#9888;</div>
+                <h3>Shuffle First!</h3>
+                <p>Please shuffle the cards before starting the game.</p>
+                <button id="alert-ok-btn" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+
+        <div id="win-overlay" class="overlay" style="display: none;">
+            <div class="win-box">
+                <div class="trophy">&#127942;</div>
+                <h2>Congratulations!</h2>
+                <p id="win-message"></p>
+                <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cjap4.js"></script>
+</body>
+</html>
